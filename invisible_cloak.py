@@ -22,7 +22,10 @@ while cap.isOpened():
         h_red=np.array([10,255,255])
 
         mask= cv2.inRange(hsv,l_red,h_red)
-        cv2.imshow("mask",mask)
+       
+
+        part1= cv2.bitwise_and(back,back,mask=mask)
+        cv2.imshow("part1",part1)
 
         if cv2.waitKey(5)== ord('q'):
             break
