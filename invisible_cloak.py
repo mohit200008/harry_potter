@@ -25,7 +25,12 @@ while cap.isOpened():
        
 
         part1= cv2.bitwise_and(back,back,mask=mask)
-        cv2.imshow("part1",part1)
+        #cv2.imshow("part1",part1)
+
+        part2= cv2.bitwise_and(frame,frame,mask=mask)
+        
+        cv2.imshow("cloak", part1+part2)
+
 
         if cv2.waitKey(5)== ord('q'):
             break
